@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:menu="@menu/top_menu_item"
+        android:id="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            app:srcCompat="@drawable/phi"
+            app:shapeAppearance="@style/ImageShape" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="start"
+                android:padding="10dp"
+                android:paddingStart="20dp"
+                android:text="Alex"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:layout_centerInParent="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView"
+                android:layout_width="380dp"
+                android:layout_height="200dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="15dp"
+                app:cardBackgroundColor="@color/dark_green"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/port_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Portfolio value"
+                        android:textColor="@color/grey" />
+
+                    <TextView
+                        android:id="@+id/money_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/port_text"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="$15,136.32"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_deposit"
+                        android:layout_width="114dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@+id/money_text"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="45dp"
+                        android:text="Deposit"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/light_green"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="0.8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_withdraw"
+                        android:layout_width="114dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@+id/money_text"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="45dp"
+                        android:layout_toEndOf="@+id/button_deposit"
+                        android:text="Withdraw"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/dark_green"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="0.8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_toEndOf="@+id/money_text"
+                        android:text="2.11% ⬆"
+                        android:textColor="@color/light_green" />
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/watchlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardView"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Watchlist"
+                android:textColor="@color/dark_green"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardView"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:text="See All"
+                android:textColor="@color/light_green"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/watchlist"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/watchlist_itemlist" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/stockText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recyclerView"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:text="Stocks Activity"
+                android:textColor="@color/dark_green"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="380dp"
+                android:layout_height="70dp"
+                android:layout_below="@+id/stockText"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="5dp"
+                app:strokeColor="@color/grey">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/nvdaImage"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        app:srcCompat="@drawable/nvidia"
+                        app:strokeColor="@color/dark_green" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/nvdaText"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_toEndOf="@+id/nvdaImage"
+                        android:text="NVDA"
+                        android:textColor="@color/dark_green"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/nvdiaaText"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nvdaText"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@+id/nvdaImage"
+                        android:text="Nvidia"
+                        android:textColor="@color/grey"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/nvdiaaNumber"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nvdaText"
+                        android:layout_marginStart="70dp"
+                        android:layout_toEndOf="@+id/nvdiaaText"
+                        android:text="⬆ 0.14%"
+                        android:textColor="@color/light_green"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/nvdaNumber1"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_toEndOf="@+id/nvdaText"
+                        android:text="25.94"
+                        android:textColor="@color/light_green"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/nvdadollarNumber1"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_toEndOf="@+id/nvdaNumber1"
+                        android:text="$227.26"
+                        android:textColor="@color/light_green"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/nvdiaadollarNumber"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nvdaText"
+                        android:layout_marginStart="70dp"
+                        android:layout_toEndOf="@+id/nvdiaaNumber"
+                        android:text="10 shares"
+                        android:textColor="@color/grey"
+                        android:textSize="13sp" />
+
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</FrameLayout>

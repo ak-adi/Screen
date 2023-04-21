@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="380dp"
+    android:layout_height="70dp"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:strokeColor="@color/grey"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/nvdaMarketImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                app:srcCompat="@drawable/nvidia"
+                app:strokeColor="@color/dark_green" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/nvdaMarketText"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_toEndOf="@+id/nvdaMarketImage"
+                android:text="NVDA"
+                android:textColor="@color/dark_green"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/nvdiaaMarketText"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nvdaMarketText"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/nvdaMarketImage"
+                android:text="Nvidia"
+                android:textColor="@color/dark_grey"
+                android:textSize="13sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/nvdiaaMarketNumber"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nvdaMarketText"
+                android:layout_marginStart="70dp"
+                android:layout_toEndOf="@+id/nvdiaaMarketText"
+                android:text="⬆ 0.14%"
+                android:textColor="@color/light_green"
+                android:textSize="13sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/nvdaMarketNumber1"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="14dp"
+                android:layout_toEndOf="@+id/nvdaMarketText"
+                android:text="25.94"
+                android:textColor="@color/light_green"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/nvdadollarMarketNumber1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="14dp"
+                android:layout_toEndOf="@+id/nvdaMarketNumber1"
+                android:text="$227.26"
+                android:textColor="@color/dark_green"
+                android:textSize="16sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/nvdiaadollarMarketNumber"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nvdaMarketText"
+                android:layout_marginStart="70dp"
+                android:layout_toEndOf="@+id/nvdiaaMarketNumber"
+                android:text="10 shares"
+                android:textColor="@color/dark_grey"
+                android:textSize="13sp" />
+
+
+        </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

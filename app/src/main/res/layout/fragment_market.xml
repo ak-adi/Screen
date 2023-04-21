@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:menu="@menu/market_menu"
+        android:id="@+id/toolbarMarket"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:paddingEnd="10dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            app:srcCompat="@drawable/arrow_back"
+            android:layout_gravity="center_vertical"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="10dp"
+                android:paddingStart="20dp"
+                android:text="Markets"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_green"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewMarket"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/toolbarMarket"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="15dp"
+            android:orientation="horizontal"
+            tools:listitem="@layout/marktet_itemlist"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/recyclerViewMarket"
+            android:background="@drawable/rounded_bg"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:imeOptions="actionSearch"
+            app:defaultQueryHint="Search"
+            app:queryHint="Search"
+            android:text="Search..."
+            android:textAppearance="@style/TextAppearance.Material3.SearchBar"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/searchView"
+            android:text="Market Movers"
+            android:id="@+id/marketText"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_green"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewMarketMovers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/marketText"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="5dp"
+            tools:listitem="@layout/market_movers_itemlist"/>
+
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>
